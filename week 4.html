@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Responsive Flexbox & Grid Layout</title>
+  <style>
+    /* ========== Base Styles ========== */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background: #f4f4f4;
+      color: #333;
+    }
+
+    /* ========== Header ========== */
+    header {
+      background: #333;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .navbar {
+      margin-top: 10px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .navbar a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    /* ========== Grid Layout ========== */
+    .grid-layout {
+      display: grid;
+      grid-template-columns: 3fr 1fr;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    /* Main content */
+    .main-content {
+      background: #fff;
+      padding: 20px;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      background: #ddd;
+      padding: 20px;
+    }
+
+    /* ========== Flexbox Section ========== */
+    .flex-section {
+      display: flex;
+      justify-content: space-around;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin: 20px;
+      padding: 20px;
+      background: #eee;
+    }
+
+    .flex-item {
+      background: #ccc;
+      padding: 20px;
+      flex: 1 1 200px;
+      text-align: center;
+    }
+
+    /* ========== Footer ========== */
+    footer {
+      background: #333;
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+      margin-top: 20px;
+    }
+
+    /* ========== Responsive Breakpoints ========== */
+
+    /* Small devices (phones) */
+    @media (max-width: 600px) {
+      .grid-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .navbar {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .flex-section {
+        flex-direction: column;
+      }
+    }
+
+    /* Medium devices (tablets) */
+    @media (min-width: 601px) and (max-width: 1024px) {
+      .grid-layout {
+        grid-template-columns: 2fr 1fr;
+      }
+    }
+
+    /* Large devices (desktops) */
+    @media (min-width: 1025px) {
+      .grid-layout {
+        grid-template-columns: 3fr 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>My Responsive Page</h1>
+    <nav class="navbar">
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Services</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <main class="grid-layout">
+    <section class="main-content">
+      <h2>Welcome</h2>
+      <p>This is the main content area. Resize the browser to see how it responds!</p>
+    </section>
+    <aside class="sidebar">
+      <h3>Sidebar</h3>
+      <ul>
+        <li>News</li>
+        <li>Updates</li>
+        <li>More</li>
+      </ul>
+    </aside>
+  </main>
+
+  <section class="flex-section">
+    <div class="flex-item">Flex Item 1</div>
+    <div class="flex-item">Flex Item 2</div>
+    <div class="flex-item">Flex Item 3</div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 My Website</p>
+  </footer>
+</body>
+</html>
